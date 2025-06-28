@@ -1,0 +1,22 @@
+artifact_path: file:///c:/MONICA/Estudos/MBA-Ufscar2025/ESBD3/Aula2_Pipeline_Mlops/notebooks/mlruns/0/models/m-022041c0c21f456984dc17aead4a111a/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+mlflow_version: 3.1.1
+model_id: m-022041c0c21f456984dc17aead4a111a
+model_size_bytes: 2682
+model_uuid: m-022041c0c21f456984dc17aead4a111a
+prompts: null
+run_id: 022487ed7dd64e54aa327b8972d4d369
+utc_time_created: '2025-06-28 15:18:23.358631'

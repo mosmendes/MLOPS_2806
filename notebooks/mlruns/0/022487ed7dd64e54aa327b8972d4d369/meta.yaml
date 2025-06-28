@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/MONICA/Estudos/MBA-Ufscar2025/ESBD3/Aula2_Pipeline_Mlops/notebooks/mlruns/0/022487ed7dd64e54aa327b8972d4d369/artifacts
+end_time: 1751123908412
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 022487ed7dd64e54aa327b8972d4d369
+run_name: zealous-seal-698
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751123903250
+status: 3
+tags: []
+user_id: mosme

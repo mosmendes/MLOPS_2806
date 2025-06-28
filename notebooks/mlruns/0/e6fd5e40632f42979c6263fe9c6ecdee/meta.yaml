@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/MONICA/Estudos/MBA-Ufscar2025/ESBD3/Aula2_Pipeline_Mlops/notebooks/mlruns/0/e6fd5e40632f42979c6263fe9c6ecdee/artifacts
+end_time: 1751121333929
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e6fd5e40632f42979c6263fe9c6ecdee
+run_name: luxuriant-fly-339
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751121325454
+status: 3
+tags: []
+user_id: mosme

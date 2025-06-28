@@ -1,0 +1,10 @@
+artifact_location: file:///c:/MONICA/Estudos/MBA-Ufscar2025/ESBD3/Aula2_Pipeline_Mlops/notebooks/mlruns/0/models/m-022041c0c21f456984dc17aead4a111a/artifacts
+creation_timestamp: 1751123903318
+experiment_id: '0'
+last_updated_timestamp: 1751123908404
+model_id: m-022041c0c21f456984dc17aead4a111a
+model_type: null
+name: modelo_sentimento
+source_run_id: 022487ed7dd64e54aa327b8972d4d369
+status: 2
+status_message: null

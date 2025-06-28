@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/MONICA/Estudos/MBA-Ufscar2025/ESBD3/Aula2_Pipeline_Mlops/notebooks/mlruns/0/9abf73ea17d742dba648832cbfddac77/artifacts
+end_time: 1751120533659
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9abf73ea17d742dba648832cbfddac77
+run_name: angry-cat-315
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751120533625
+status: 4
+tags: []
+user_id: mosme
