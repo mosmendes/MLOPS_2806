@@ -9,3 +9,5 @@ seaborn
 pytest
 jupyter
 nbconvert
+pytest
+pytest-cov
