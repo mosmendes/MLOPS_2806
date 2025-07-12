@@ -3,6 +3,26 @@ import joblib
 import os
 from sklearn.metrics import accuracy_score
 
+model_path = "./model.joblib"
+vectorizer_path = "./vectorizer.joblib"
+data_path = "./data/tweets_limpo.csv"
+
+test_cases = [
+    #curto
+    ("Adorei este seviço","positivo"),
+    ("O serviço foi ok", "neutro"),
+    ("Este serviço é horrível","negativo"),
+    #medio
+    #("Entrega do produto está dentro do esperado", "neutro"),
+    #("Adorei o produto de investimentos no mercado de capitais","positivo"),
+    #("O serviço de instalação de internet falhou","negativo"),
+    #longo
+    #("Ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh, excelente", "positivo"),
+    #("Ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh, ruim", "negativo"),
+    #("Ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh, ok", "neutro")
+    
+]
+
 def test_model_files_exist():
     assert os.path.exists("./model.joblib"), "Modelo não encontrado"
     assert os.path.exists("./vectorizer.joblib"), "Vector não encontrado"
@@ -26,18 +46,16 @@ def test_model_prediction_labels():
     sample = ["O serviço foi péssimo"]
     vetor = vectorizer.transform(sample)
     pred = model.predict(vetor)[0]
-    assert pred in ["positivo", "negativo"], f"Rótulo inesperado {pred}"
+    assert pred in ["positivo", "negativo","neutro"], f"Rótulo inesperado {pred}"
 
 def test_data_validation():
     df = pd.read_csv("./data/tweets_limpo.csv")
     assert "text" in df.columns and "label" in df.columns
     assert df["text"].notnull().all()
-    assert df["label"].isin(["positivo", "negativo"]).all()
+    assert df["label"].isin(["positivo", "negativo","neutro"]).all()
 
 def test_fairness_by_text_length():
-    model_path = "./model.joblib"
-    vectorizer_path = "./vectorizer.joblib"
-    data_path = "./data/tweets_limpo.csv"
+
 
     assert os.path.exists(model_path), "Modelo não encontrado"
     assert os.path.exists(vectorizer_path), "Vector não encontrado"
@@ -67,3 +85,14 @@ def test_fairness_by_text_length():
     max_diff = max(acc_values) - min(acc_values)
     print(f"Acuracia por grupos de tamanho: {results}")
     assert max_diff < 0.2, f"Diferença de acurácia entre grupos muito alta {max_diff:2f}"
+
+
+#percorrer lista de tweets, mandar para o modelo, comparar predito com  esperado
+def test_sentimento_classificacao():
+    model = joblib.load(model_path)
+    vectorize = joblib.load(vectorizer_path)
+
+    for text, expected in test_cases:
+        pred = model.predict(vectorize.transform([text]))[0]
+        print(f"Texto: {text} \nPrevisto: {pred} | Esperado: {expected}\n")
+        assert pred == expected
